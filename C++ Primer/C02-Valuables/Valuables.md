@@ -22,15 +22,16 @@
 #### 2.4.1 引用的例外
 
 1. **允许一个常量引用绑定到非常量的对象、字面值**(反过来一个非常量的引用绑定到常量对象上却是不行的)
->* 编译器做了什么
+ 
+>* 当如下语句编译时
 
->  ```double dval = 3.14;```
+     double dval = 3.14;
+     const int &r = dval
 
->  ```const int &r = dval``` 
+>* 编译器做了如下操作：
 
-1. **```const int temp = dval```** ;
-
-2. **```const int &r = temp```**
+    1.const int temp = dval ;
+    2.const int &r = temp
 
 ### 2.6 自定义数据结构
 
