@@ -2,19 +2,9 @@
 #include "Screen.h"
 #include <string>
 
-class Screen {
-   public:
-	   using  pos = std::string::size_type;
-   private:
-	   
-};
-
-inline Screen &Screen::move(pos r, pos c)
+//尽管some_member()是一个const函数，但依然可以改变mutable变量的值
+void Screen::some_member() const
 {
-
+	++access_ctr;
 }
 
-inline char Screen::get() const
-{
-
-}
