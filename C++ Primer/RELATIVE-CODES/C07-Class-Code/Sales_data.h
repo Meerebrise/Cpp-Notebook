@@ -12,9 +12,9 @@ class Sales_data
 
 	//¹¹ÔìÆ÷
     public:
-		Sales_data() :bookNu_sold(0), revenue(0.0) {};
-		Sales_data(const std::string &s):bookNo(s), bookNu_sold(0), revenue(0.0) {};
-		Sales_data(const std::string &s, unsigned n, double p) :bookNo(s), bookNu_sold(n), revenue(n*p) {};
+		Sales_data() :bookNu_sold(0), revenue(0.0) {}
+		Sales_data(const std::string &s):bookNo(s), bookNu_sold(0), revenue(0.0) {}
+		Sales_data(const std::string &s, unsigned n, double p) :bookNo(s), bookNu_sold(n), revenue(n*p) {}
 		Sales_data(std::istream &);
 
     private:
