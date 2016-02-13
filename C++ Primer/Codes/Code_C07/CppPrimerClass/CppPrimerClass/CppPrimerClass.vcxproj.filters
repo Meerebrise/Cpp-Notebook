@@ -21,6 +21,9 @@
     <ClInclude Include="Sales_data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="WindowMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Screen.cpp">
