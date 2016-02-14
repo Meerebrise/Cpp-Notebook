@@ -139,6 +139,57 @@
  
 ## 7.4 类的作用域
 
+### 7.4.1 名字查找和作用域
+
+* 编译器处理完类中的全部声明后才会处理成员函数的定义
+
+* 类型名重定义如下，在某些编译器中属于错误**(重定义Money类型)**
+
+        typedef double Money;
+        class Account
+        {
+          private:
+	        typedef double Money;
+        };
+
+* 类型名的定义最好放在类的开头处
+
+### 7.4.2 成员定义中的普通块作用域的名字查找
+
+      int height; //定义在类外
+      class Screen{
+      public:
+          typedef std::string::size_type pos;
+          void dummy_fcn(pos height) {
+             cursor = width * height;
+          }
+      private:
+          pos cursor = 0;
+          pos height = 0,width = 0;
+      };
+
+      此时参数height隐藏了同名成员
+
+如果要访问成员height(Two Methods)。
+    
+    void Screen::dummy_fcn(pos height) {
+        //Method 1  this
+        cursor = width*this->height;
+        
+        //Method 2  Screen::
+        cursor = width*Screen::height;
+    }
+     
+如果要访问类外的全局height，通过**域作用符**访问。
+
+     void Screen::dummy_fcn(pos height) {
+         
+          cursor = width * ::height;
+     }
+
+
+* 除了类定义之前的全局声明，还要包括成员函数**(类外的)**定义之前的全局声明。
+ 
 ## 7.5 构造函数再探
 
 ## 7.6 类的静态成员

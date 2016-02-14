@@ -142,11 +142,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Account.h" />
     <ClInclude Include="Sales_data.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="WindowMgr.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Account.cpp" />
     <ClCompile Include="Sales_data.cpp" />
     <ClCompile Include="Screen.cpp" />
   </ItemGroup>

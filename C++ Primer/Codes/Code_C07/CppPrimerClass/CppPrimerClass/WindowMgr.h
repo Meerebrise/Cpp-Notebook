@@ -22,7 +22,8 @@ private:
 };
 
 inline
-Window_mgr::ScreenIndex Window_mgr::addScreen(const Screen &s)
+Window_mgr::ScreenIndex 
+Window_mgr::addScreen(const Screen &s)
 {
 	screens.push_back(s);
 	return screens.size() - 1;
@@ -43,4 +44,6 @@ void Window_mgr::resize(Screen::pos r, Screen::pos c, ScreenIndex i)
 							// resize and clear the contents member
 	screens[i].contents = std::string(r * c, ' ');
 }
+
+
 #endif
